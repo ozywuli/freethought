@@ -1,3 +1,13 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
 /*
 ResetCSS / reset-css / vc-reset-css
 0.2.2
@@ -1305,6 +1315,40 @@ body {
 	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+.topbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: #000;
+	color: #FFF;
+	z-index: 20;
+	text-align: center;
+}
+
+.sm {
+	float: left;
+	display: inline-block;
+}
+
+.title {
+	display: inline-block;
+	font-size: 2rem;
+}
+
+.toc-toggle {
+	float: right;
+	display: inline-block;
+}
+
 .masthead {
 	display: table;
 	position: relative;
@@ -1332,5 +1376,29 @@ body {
 	left: 0;
 	z-index: 0;
 	background: rgba(0, 0, 0, 0.5);
+}
+
+.sections {
+	max-width: 68em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sections::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.section {
+	float: left;
+	display: block;
+	margin-right: 2.35765%;
+	width: 65.88078%;
+	margin-left: 17.05961%;
+}
+
+.section:last-child {
+	margin-right: 0;
 }
 

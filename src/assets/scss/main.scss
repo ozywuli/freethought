@@ -1,6 +1,13 @@
-@import 'reset.scss';
-@import 'normalize.scss';
-@import 'settings.scss';
-@import 'base.scss';
-@import 'masthead.scss';
-@import 'toc.scss';
+@import "bourbon";
+@import "neat";
+
+@import 'mixins';
+@import 'reset';
+@import 'normalize';
+@import 'settings';
+@import 'base';
+@import 'topbar';
+@import 'toc';
+@import 'masthead';
+@import 'grid';
+@import 'toc';

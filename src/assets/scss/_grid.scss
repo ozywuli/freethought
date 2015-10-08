@@ -1,0 +1,8 @@
+.sections {
+  @include outer-container;
+}
+
+.section {
+  @include span-columns(8);
+  @include shift(2);
+}
