@@ -21,6 +21,13 @@
 }
 
 .toc-toggle {
-  float: right;
-  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  svg {
+    fill: #FFF;
+    width: 25px;
+    height: 25px;
+  }
+
 }
