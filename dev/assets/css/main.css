@@ -1365,12 +1365,13 @@ a {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 	opacity: 0;
 	visibility: hidden;
 	width: 300px;
 	background: #000;
+	transition: all 150ms ease;
 	z-index: 15;
 }
 
@@ -1452,12 +1453,13 @@ a {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
 	opacity: 0;
 	visibility: hidden;
 	width: 300px;
 	background: #000;
+	transition: all 150ms ease;
 	z-index: 15;
 }
 
