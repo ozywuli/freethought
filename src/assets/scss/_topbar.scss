@@ -12,6 +12,63 @@
 .sm {
   float: left;
   display: inline-block;
+
+
+  &-menu {
+    top: 52px;
+    left: 6px;
+    position: absolute;
+    background: #333;
+    padding: 10px;
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden; 
+
+    &:before, &:after {
+      bottom: 100%;
+      left: 10px;
+      border: solid rgba(0, 0, 0, 0);
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+
+      border-color: rgba(51, 51, 51, 0);
+      border-bottom-color: #333;
+      border-width: 10px;
+
+    }
+
+
+    a {
+      display: block;
+      line-height: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .sm-active & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  & > a {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -14px;
+    display: block;
+    padding: 12px;
+    background: url('../img/share.png');
+    background-size: 50px;
+    background-position: 0px -85px;
+    background-repeat: no-repeat;
+  }
+
+
 }
 
 .title {
@@ -30,4 +87,32 @@
     height: 25px;
   }
 
+}
+
+.sprite-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/share.png');
+  background-size: 40px;
+  background-repeat: no-repeat;
+
+  &--facebook {
+    background-position: 0 0;
+  }
+  &--twitter {
+    background-position: -23px 0;
+
+  }
+  &--tumblr {
+    background-position: -23px -23px;
+    
+  }
+  &--google {
+    background-position: 0 -22px;
+  }
+  &--email {
+    background-position: 0 -44px;
+  }
 }

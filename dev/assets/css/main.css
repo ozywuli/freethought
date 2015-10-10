@@ -1343,6 +1343,56 @@ a {
 	display: inline-block;
 }
 
+.sm-menu {
+	top: 52px;
+	left: 6px;
+	position: absolute;
+	background: #333;
+	padding: 10px;
+	text-align: left;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.sm-menu:before,
+.sm-menu:after {
+	bottom: 100%;
+	left: 10px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(51, 51, 51, 0);
+	border-bottom-color: #333;
+	border-width: 10px;
+}
+
+.sm-menu a {
+	display: block;
+	line-height: 2rem;
+	margin-bottom: 5px;
+}
+
+.sm-active .sm-menu {
+	opacity: 1;
+	visibility: visible;
+}
+
+.sm > a {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	margin-top: -14px;
+	display: block;
+	padding: 12px;
+	background: url("../img/share.png");
+	background-size: 50px;
+	background-position: 0px -85px;
+	background-repeat: no-repeat;
+}
+
 .title {
 	display: inline-block;
 	font-size: 2rem;
@@ -1358,6 +1408,36 @@ a {
 	fill: #FFF;
 	width: 25px;
 	height: 25px;
+}
+
+.sprite-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	background-image: url("../img/share.png");
+	background-size: 40px;
+	background-repeat: no-repeat;
+}
+
+.sprite-icon--facebook {
+	background-position: 0 0;
+}
+
+.sprite-icon--twitter {
+	background-position: -23px 0;
+}
+
+.sprite-icon--tumblr {
+	background-position: -23px -23px;
+}
+
+.sprite-icon--google {
+	background-position: 0 -22px;
+}
+
+.sprite-icon--email {
+	background-position: 0 -44px;
 }
 
 .toc {
