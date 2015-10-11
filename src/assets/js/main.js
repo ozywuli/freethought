@@ -54,7 +54,7 @@ $('body').on('click', function(e) {
 $tocOptions = $('.toc__options');
 var sectionTitle;
 
-$('.section').each(function() {
+$('.js-section').each(function() {
   console.log( $(this).find('h2').html() );
 
   $tocOptions.append( '<li><a href="#' + $(this).attr('id') + '" class="toc__links">' + $(this).find('h2').html() + '</a></li>' );
@@ -82,6 +82,33 @@ $tocLinks.on('click', function(e) {
   });
 
 });
+
+
+// Fade in elem on scroll
+  $(window).on('scroll', function() {
+
+    $('.fadein').each(function() {
+
+
+      var windowHeight = $(window).height();
+      var scrolledNumber = $(window).scrollTop();
+
+      var offsetTop = $(this).offset().top;
+      var outerHeight = $(this).outerHeight();
+
+      if ( (windowHeight + scrolledNumber) > (offsetTop + outerHeight/5) ) {
+
+        $(this).animate({
+          'opacity': '1',
+          'top': 0
+        }, 800)
+
+      }
+
+    });
+});
+
+
 
 
 }); // end document ready

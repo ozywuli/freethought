@@ -1,0 +1,27 @@
+.fig {
+  figcaption {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  @include respond-to('desktop') {
+    figcaption {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
+.offset {
+  float: none;
+  margin: 15px;
+  text-align: center;
+}
+
+.offset--left {
+  @include respond-to('desktop') {
+    float: left;
+    margin: 10px 20px 0 -100px;
+  }
+}
+

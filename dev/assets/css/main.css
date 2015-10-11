@@ -1575,6 +1575,15 @@ a:hover {
 	display: table;
 }
 
+.sections a {
+	color: blue;
+}
+
+.sections a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
 .sections h2 {
 	margin-bottom: 1rem;
 	font-size: 2.8rem;
@@ -1599,6 +1608,15 @@ a:hover {
 	margin-right: 0;
 }
 
+.section--prelude {
+	margin-bottom: 40px;
+}
+
+.section--prelude p {
+	margin-bottom: 0;
+	font-size: 1.2rem;
+}
+
 #freethought-and-propaganda:before {
 	content: '';
 	display: block;
@@ -1606,6 +1624,12 @@ a:hover {
 	height: 1px;
 	margin: 20px auto 40px auto;
 	background: #000;
+}
+
+.fadein {
+	position: relative;
+	opacity: 0;
+	top: 10px;
 }
 
 .toc {
@@ -1654,6 +1678,31 @@ a:hover {
 	text-decoration: underline;
 }
 
+.fig figcaption {
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+.offset {
+	float: none;
+	margin: 15px;
+	text-align: center;
+}
+
+.notfound {
+	max-width: 600px;
+	margin: 100px auto;
+}
+
+.notfound a {
+	color: blue;
+}
+
+.notfound a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
 a[aria-describedby="footnote-label"] {
 	counter-increment: footnotes; /* 1 */
 	text-decoration: none; /* 2 */
@@ -1685,11 +1734,6 @@ footer :target {
 #footnotes a {
 	float: left;
 	font-weight: bold;
-}
-
-#footnotes a:hover {
-	color: #000;
-	opacity: 0.2;
 }
 
 #footnotes p {
@@ -1776,6 +1820,19 @@ footer :target {
 
 .section:last-child {
 	margin-right: 0;
+}
+
+.section--prelude p {
+	font-size: 1.5rem;
+}
+
+.fig figcaption {
+	font-size: 1.5rem;
+}
+
+.offset--left {
+	float: left;
+	margin: 10px 20px 0 -100px;
 }
 
 }
