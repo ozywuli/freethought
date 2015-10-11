@@ -16,6 +16,34 @@
     text-align: center;
     color: #FFF;
   }
+  .masthead__img {
+    border: 1px solid #f1f1f1;
+    border-radius: 50%;
+    padding: 5px;
+    width: 125px;
+    height: 125px;
+    &:hover {
+      border: 1px solid #f1f1f1;
+    }
+
+    @include respond-to('desktop') {
+      width: 200px;
+      height: 200px;
+    }
+
+  }
+  .masthead__title {
+    font-size: 2.4rem;
+    @include respond-to('desktop') {
+      font-size: 3.2rem;
+    }
+  }
+  .masthead__attribution {
+    font-size: 1.5rem;
+    @include respond-to('desktop') {
+      font-size: 2rem;
+    }
+  }
 
 .overlay {
   position: absolute;

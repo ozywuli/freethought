@@ -1313,6 +1313,8 @@ html,
 body {
 	width: 100%;
 	height: 100%;
+	font-family: "Roboto Mono", "sans-serif";
+	font-weight: 400;
 }
 
 html {
@@ -1320,11 +1322,15 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: 2rem;
 }
 
 a {
 	text-decoration: none;
+}
+
+a:hover {
+	color: yellow;
 }
 
 .topbar {
@@ -1334,13 +1340,15 @@ a {
 	left: 0;
 	background: #000;
 	color: #FFF;
-	z-index: 20;
 	text-align: center;
+	height: 40px;
+	z-index: 20;
 }
 
 .sm {
 	float: left;
 	display: inline-block;
+	font-size: 1.5rem;
 }
 
 .sm-menu {
@@ -1349,6 +1357,9 @@ a {
 	position: absolute;
 	background: #333;
 	text-align: left;
+	transition: all 150ms ease;
+	-webkit-transform: translate3d(0, -5%, 0);
+	transform: translate3d(0, -5%, 0);
 	opacity: 0;
 	visibility: hidden;
 }
@@ -1368,15 +1379,30 @@ a {
 	border-width: 10px;
 }
 
-.sm-menu a {
+.sm-menu span {
+	position: relative;
 	display: block;
 	line-height: 2rem;
-	padding: 5px 10px;
+	padding: 5px 15px;
+	color: #FFF !important;
+}
+
+.sm-menu .stButton {
+	margin: 0;
+	padding: 0;
+}
+
+.sm-menu .chicklets {
+	background: none !important;
+	padding: 0 0 0 30px !important;
+	font-size: 1.4rem !important;
 }
 
 .sm-active .sm-menu {
 	opacity: 1;
 	visibility: visible;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 .sm > a {
@@ -1387,19 +1413,18 @@ a {
 	display: block;
 	padding: 12px;
 	background: url("../img/share.png");
-	background-size: 50px;
-	background-position: 0px -85px;
+	background-size: 40px;
+	background-position: 0px -65px;
 	background-repeat: no-repeat;
 }
 
 .title {
-	display: inline-block;
-	font-size: 2rem;
+	display: none;
 }
 
 .toc-toggle {
 	position: absolute;
-	top: 12px;
+	top: 7px;
 	right: 15px;
 }
 
@@ -1410,12 +1435,13 @@ a {
 }
 
 .sprite-icon {
-	display: inline-block;
-	vertical-align: middle;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
 	width: 20px;
 	height: 20px;
 	background-image: url("../img/share.png");
-	background-size: 40px;
+	background-size: 45px;
 	background-repeat: no-repeat;
 }
 
@@ -1424,19 +1450,19 @@ a {
 }
 
 .sprite-icon--twitter {
-	background-position: -23px 0;
+	background-position: -26px 0;
 }
 
 .sprite-icon--tumblr {
-	background-position: -23px -23px;
+	background-position: -26px -26px;
 }
 
 .sprite-icon--google {
-	background-position: 0 -22px;
+	background-position: 0 -26px;
 }
 
 .sprite-icon--email {
-	background-position: 0 -44px;
+	background-position: 0 -51px;
 }
 
 .toc {
@@ -1453,6 +1479,7 @@ a {
 	padding-top: 70px;
 	transition: all 150ms ease;
 	color: #FFF;
+	font-size: 1.2rem;
 	z-index: 15;
 }
 
@@ -1504,6 +1531,26 @@ a {
 	color: #FFF;
 }
 
+.masthead__img {
+	border: 1px solid #f1f1f1;
+	border-radius: 50%;
+	padding: 5px;
+	width: 125px;
+	height: 125px;
+}
+
+.masthead__img:hover {
+	border: 1px solid #f1f1f1;
+}
+
+.masthead__title {
+	font-size: 2.4rem;
+}
+
+.masthead__attribution {
+	font-size: 1.5rem;
+}
+
 .overlay {
 	position: absolute;
 	top: 0;
@@ -1530,27 +1577,81 @@ a {
 
 .sections h2 {
 	margin-bottom: 1rem;
-	font-size: 3.6rem;
+	font-size: 2.8rem;
 }
 
 .sections p {
 	line-height: 1.5;
 	margin-bottom: 2rem;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 }
 
 .section {
 	float: left;
 	display: block;
 	margin-right: 2.35765%;
-	width: 74.41059%;
-	margin-left: 17.05961%;
+	width: 100%;
 	margin-top: -70px;
 	padding-top: 70px;
 }
 
 .section:last-child {
 	margin-right: 0;
+}
+
+#freethought-and-propaganda:before {
+	content: '';
+	display: block;
+	width: 40px;
+	height: 1px;
+	margin: 20px auto 40px auto;
+	background: #000;
+}
+
+.toc {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+	opacity: 0;
+	visibility: hidden;
+	width: 300px;
+	background: #000;
+	padding-top: 70px;
+	transition: all 150ms ease;
+	color: #FFF;
+	font-size: 1.2rem;
+	z-index: 15;
+}
+
+.toc--active .toc {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+	visibility: visible;
+}
+
+.toc__title {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.toc__links {
+	display: block;
+	padding: 10px 20px;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+.attribution a {
+	text-decoration: underline;
 }
 
 a[aria-describedby="footnote-label"] {
@@ -1569,7 +1670,6 @@ a[aria-describedby="footnote-label"]::after {
 	font-size: 0.5em; /* 3 */
 	margin-left: 2px; /* 4 */
 	color: blue; /* 5 */
-	text-decoration: underline; /* 5 */
 	cursor: pointer; /* 5 */
 }
 
@@ -1585,6 +1685,11 @@ footer :target {
 #footnotes a {
 	float: left;
 	font-weight: bold;
+}
+
+#footnotes a:hover {
+	color: #000;
+	opacity: 0.2;
 }
 
 #footnotes p {
@@ -1619,48 +1724,59 @@ footer :target {
 	content: counter(footnotes-list);
 }
 
-.toc {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	-webkit-transform: translate3d(100%, 0, 0);
-	transform: translate3d(100%, 0, 0);
-	opacity: 0;
-	visibility: hidden;
-	width: 300px;
-	background: #000;
-	padding-top: 70px;
-	transition: all 150ms ease;
-	color: #FFF;
-	z-index: 15;
+@media all and (min-width: 700px) {
+
+.topbar {
+	height: auto;
 }
 
-.toc--active .toc {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	opacity: 1;
-	visibility: visible;
+.sm > a {
+	background-size: 50px;
+	background-position: 0px -85px;
 }
 
-.toc__title {
+.title {
+	display: inline-block;
 	font-size: 2rem;
-	margin-bottom: 20px;
-	margin-left: 20px;
+	font-weight: 300;
 }
 
-.toc__links {
+.toc-toggle {
+	top: 12px;
+}
+
+.masthead__img {
+	width: 200px;
+	height: 200px;
+}
+
+.masthead__title {
+	font-size: 3.2rem;
+}
+
+.masthead__attribution {
+	font-size: 2rem;
+}
+
+.sections h2 {
+	font-size: 3.6rem;
+}
+
+.sections p {
+	font-size: 1.8rem;
+}
+
+.section {
+	float: left;
 	display: block;
-	padding: 10px 20px;
+	margin-right: 2.35765%;
+	width: 48.82117%;
+	margin-left: 25.58941%;
 }
 
-.attribution {
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
+.section:last-child {
+	margin-right: 0;
 }
 
-.attribution a {
-	text-decoration: underline;
 }
 

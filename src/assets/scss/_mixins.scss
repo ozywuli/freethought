@@ -9,10 +9,7 @@
 // ==================================================
 
 $breakpoints: (
-  'small': 600px,
-  'medium': 800px,
-  'large': 1200px,
-  'xlarge': 1500px
+  'desktop': 700px,
 );
 
 @mixin respond-to($breakpoint) {

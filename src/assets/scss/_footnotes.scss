@@ -1,0 +1,83 @@
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes; /* 1 */
+  text-decoration: none; /* 2 */
+  color: inherit; /* 2 */
+  cursor: default; /* 2 */
+  outline: none; /* 2 */
+
+  margin-top: -70px;
+  padding-top: 70px;
+}
+a[aria-describedby="footnote-label"]::after {
+  content: '[' counter(footnotes) ']'; /* 1 */
+  vertical-align: super; /* 2 */
+  font-size: 0.5em; /* 3 */
+  margin-left: 2px; /* 4 */
+  color: blue; /* 5 */
+  cursor: pointer; /* 5 */
+}
+a[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+footer :target {
+  background: yellow;
+}
+
+
+
+#footnotes {
+
+
+
+  a {
+    float: left;
+    font-weight: bold;
+
+    &:hover {
+      color: #000;
+      opacity: 0.2;
+    }
+  }
+
+  p {
+    padding-left: 30px;
+  }
+
+  a, p {
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+
+
+}
+
+
+
+.footnotes {
+  counter-reset: footnotes-list;
+
+  li {
+    counter-increment: footnotes-list;
+  }
+
+  a {
+
+    &:before {
+      content: counter(footnotes-list);
+    }
+  }
+
+}
