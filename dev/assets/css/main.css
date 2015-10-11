@@ -1561,6 +1561,27 @@ a:hover {
 	background: rgba(0, 0, 0, 0.65);
 }
 
+.browserupgrade-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	background: #000;
+	z-index: 9999;
+}
+
+.browserupgrade-overlay p {
+	margin: 20px;
+}
+
+.browserupgrade-overlay a {
+	text-decoration: underline;
+}
+
 .sections {
 	max-width: 68em;
 	margin-left: auto;
