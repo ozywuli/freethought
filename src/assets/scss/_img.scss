@@ -24,4 +24,9 @@
     margin: 10px 20px 0 -100px;
   }
 }
-
+.offset--right {
+  @include respond-to('desktop') {
+    float: right;
+    margin: 10px -100px 0 20px;
+  }
+}
