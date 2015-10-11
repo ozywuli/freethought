@@ -8,7 +8,9 @@
   visibility: hidden;
   width: 300px;
   background: #000;
+  padding-top: 70px;
   transition: all 150ms ease;
+  color: #FFF;
   @include z-index('toc');
 
   .toc--active & {
@@ -17,5 +19,25 @@
     visibility: visible;
   }
 }
+  .toc__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  .toc__links {
+    display: block;
+    padding: 10px 20px;
+  }
 
 
+
+
+
+.attribution {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  a {
+    text-decoration: underline;
+  }
+}

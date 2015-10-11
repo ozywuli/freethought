@@ -1,3 +1,7 @@
+$(function() {
+
+
+
 $tocToggle = $('.toc-toggle');
 $toc = $('.toc');
 
@@ -40,8 +44,44 @@ $('body').on('click', function(e) {
     !$smToggle.find('*').is(e.target) &&
     !$sm.is(e.target) &&
     !$sm.find('*').is(e.target)
-  ) {
+    ) {
     $(this).attr('class', '');
   }
 
 });
+
+
+$tocOptions = $('.toc__options');
+var sectionTitle;
+
+$('.section').each(function() {
+  console.log( $(this).find('h2').html() );
+
+  $tocOptions.append( '<li><a href="#' + $(this).attr('id') + '" class="toc__links">' + $(this).find('h2').html() + '</a></li>' );
+
+});
+
+
+
+// Smooth scroll to anchor point
+var $tocLinks = $('.toc__links');
+console.log($tocLinks);
+
+
+$tocLinks.on('click', function(e) {
+
+  e.preventDefault();
+  var that = $(this);
+
+
+
+  $('html, body').animate({
+    scrollTop: $(that.attr('href')).offset().top
+  }, 800, function() {
+    location.href = that.attr('href');
+  });
+
+});
+
+
+}); // end document ready

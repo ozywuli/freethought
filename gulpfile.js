@@ -125,7 +125,7 @@ gulp.task('watch', function() {
 
     gulp.start('html', 'css', 'js', 'img');
 
-    gulp.watch(['src/*.html', 'src/partials/*'], ['html']);
+    gulp.watch(['src/*.html', 'src/partials/**/*'], ['html']);
 
     // Watch .scss files
     gulp.watch('src/assets/scss/**/*', ['css']);

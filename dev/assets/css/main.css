@@ -1348,7 +1348,6 @@ a {
 	left: 6px;
 	position: absolute;
 	background: #333;
-	padding: 10px;
 	text-align: left;
 	opacity: 0;
 	visibility: hidden;
@@ -1372,7 +1371,7 @@ a {
 .sm-menu a {
 	display: block;
 	line-height: 2rem;
-	margin-bottom: 5px;
+	padding: 5px 10px;
 }
 
 .sm-active .sm-menu {
@@ -1451,7 +1450,9 @@ a {
 	visibility: hidden;
 	width: 300px;
 	background: #000;
+	padding-top: 70px;
 	transition: all 150ms ease;
+	color: #FFF;
 	z-index: 15;
 }
 
@@ -1460,6 +1461,27 @@ a {
 	transform: translate3d(0, 0, 0);
 	opacity: 1;
 	visibility: visible;
+}
+
+.toc__title {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.toc__links {
+	display: block;
+	padding: 10px 20px;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+.attribution a {
+	text-decoration: underline;
 }
 
 .masthead {
@@ -1497,6 +1519,7 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 40px 15px;
+	counter-reset: footnotes;
 }
 
 .sections::after {
@@ -1507,25 +1530,93 @@ a {
 
 .sections h2 {
 	margin-bottom: 1rem;
-	font-size: 3rem;
+	font-size: 3.6rem;
 }
 
 .sections p {
 	line-height: 1.5;
 	margin-bottom: 2rem;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 
 .section {
 	float: left;
 	display: block;
 	margin-right: 2.35765%;
-	width: 65.88078%;
+	width: 74.41059%;
 	margin-left: 17.05961%;
+	margin-top: -70px;
+	padding-top: 70px;
 }
 
 .section:last-child {
 	margin-right: 0;
+}
+
+a[aria-describedby="footnote-label"] {
+	counter-increment: footnotes; /* 1 */
+	text-decoration: none; /* 2 */
+	color: inherit; /* 2 */
+	cursor: default; /* 2 */
+	outline: none; /* 2 */
+	margin-top: -70px;
+	padding-top: 70px;
+}
+
+a[aria-describedby="footnote-label"]::after {
+	content: "[" counter(footnotes) "]"; /* 1 */
+	vertical-align: super; /* 2 */
+	font-size: 0.5em; /* 3 */
+	margin-left: 2px; /* 4 */
+	color: blue; /* 5 */
+	text-decoration: underline; /* 5 */
+	cursor: pointer; /* 5 */
+}
+
+a[aria-describedby="footnote-label"]:focus::after {
+	outline: thin dotted;
+	outline-offset: 2px;
+}
+
+footer :target {
+	background: yellow;
+}
+
+#footnotes a {
+	float: left;
+	font-weight: bold;
+}
+
+#footnotes p {
+	padding-left: 30px;
+}
+
+#footnotes a,
+#footnotes p {
+	line-height: 1.5;
+	font-size: 1.5rem;
+}
+
+#footnotes:before {
+	content: '';
+	display: block;
+	height: 1px;
+	width: 100%;
+	background: #333;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.footnotes {
+	counter-reset: footnotes-list;
+}
+
+.footnotes li {
+	counter-increment: footnotes-list;
+}
+
+.footnotes a:before {
+	content: counter(footnotes-list);
 }
 
 .toc {
@@ -1539,7 +1630,9 @@ a {
 	visibility: hidden;
 	width: 300px;
 	background: #000;
+	padding-top: 70px;
 	transition: all 150ms ease;
+	color: #FFF;
 	z-index: 15;
 }
 
@@ -1548,5 +1641,26 @@ a {
 	transform: translate3d(0, 0, 0);
 	opacity: 1;
 	visibility: visible;
+}
+
+.toc__title {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.toc__links {
+	display: block;
+	padding: 10px 20px;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+.attribution a {
+	text-decoration: underline;
 }
 

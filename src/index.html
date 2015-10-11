@@ -1,75 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Bertrand Russell - Free Thought And Official Propaganda</title>
-
-  <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
+@@include('./partials/modules/header.html')
 
 
 <!-- Begin Container -->
 <div class="content">
 
 
-<div class="topbar">
-  <div class="sm">
-    <a href="#" class="sm-toggle"><span class="hidden"></span></a>
-    <div class="sm-menu">
-      <a href="#" class="sm-link sm-facebook">
-        <i class="sprite-icon sprite-icon--facebook"></i>
-        Facebook
-      </a>
-      <a href="#" class="sm-link sm-twitter">
-        <i class="sprite-icon sprite-icon--twitter"></i>
-        Twitter
-      </a>
-      <a href="#" class="sm-link sm-tumblr">
-        <i class="sprite-icon sprite-icon--tumblr"></i>
-        Tumblr
-      </a>
-      <a href="#" class="sm-link sm-google">
-        <i class="sprite-icon sprite-icon--google"></i>
-        Google
-      </a>
-      <a href="#" class="sm-link sm-email">
-        <i class="sprite-icon sprite-icon--email"></i>
-        Email
-      </a>
-    </div>
-  </div>
-  <h1 class="title"><a href="index.html">Free Thought and Official Propaganda</a></h1>
-  <a href="#" class="toc-toggle">
-    @@include('./partials/icons/menu.html')
-  </a>
-</div>
+<!-- #Topbar -->
+@@include('./partials/modules/topbar.html')
+<!-- /Topbar -->
 
-<!-- Begin Nav -->
-<nav class="toc">
-  <h2 class="toc__title">Table of Contents</h2>
-</nav>
-<!-- End Nav -->
+<!-- #TOC -->
+@@include('./partials/modules/toc.html')
+<!-- /TPC -->
 
 <!-- Begin Masthead -->
-<header class="masthead">
-  <div class="overlay"></div>
-  <div class="masthead__copy">
-    <h1 class="masthead__title" >Free Thought And Official Propaganda</h1>
-    <p class="masthead__attribution">Bertrand Russell</p>
-  </div>
-</header>
+@@include('./partials/modules/masthead.html')
 <!-- End Masthead -->
 
 
 <!-- Begin Sections -->
 <article class="sections">
 
-<section class="intro section">
-@@include('./partials/chairman_introductory_address.html')
+<section class="section" id="chairman-introductory-address">
+  @@include('./partials/sections/chairman_introductory_address.html')
 </section>
-
-
+<section class="section" id="freethought-and-propaganda">
+  @@include('./partials/sections/freethought.html')
+</section>
+<section class="section" id="education">
+  <h2>EDUCATION</h2>
+  @@include('./partials/sections/education.html')
+</section>
+<section class="section" id="propaganda">
+  <h2>PROPAGANDA</h2>
+  @@include('./partials/sections/propaganda.html')
+</section>
+<section class="section" id="economic-pressure">
+  <h2>ECONOMIC PRESSURE</h2>
+  @@include('./partials/sections/economicpressure.html')
+</section>
+<!-- <section class="section" id="appendix">
+  <h2>APPENDEX</h2>
+</section> -->
+<footer class="section" id="footnotes">
+  <h2>FOOTNOTES</h2>
+  @@include('./partials/sections/footnotes.html')
+</footer>
 
 </article>
 <!-- End Sections -->
@@ -80,11 +56,4 @@
 <!-- End Container -->
 
 
-<!-- Begin Javascript -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
-<!-- End Javascript -->
-
-</body>
-</html>
+@@include('./partials/modules/footer.html')

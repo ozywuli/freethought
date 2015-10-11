@@ -2,19 +2,105 @@
   @include outer-container;
   @include padding(40px 15px);
 
+  counter-reset: footnotes;
+
   h2 {
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 3.6rem;
   }
 
   p {
     line-height: 1.5;
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 
 .section {
-  @include span-columns(8);
+  @include span-columns(9);
   @include shift(2);
+  margin-top: -70px;
+  padding-top: 70px;
+}
+
+
+
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes; /* 1 */
+  text-decoration: none; /* 2 */
+  color: inherit; /* 2 */
+  cursor: default; /* 2 */
+  outline: none; /* 2 */
+
+  margin-top: -70px;
+  padding-top: 70px;
+}
+a[aria-describedby="footnote-label"]::after {
+  content: '[' counter(footnotes) ']'; /* 1 */
+  vertical-align: super; /* 2 */
+  font-size: 0.5em; /* 3 */
+  margin-left: 2px; /* 4 */
+  color: blue; /* 5 */
+  text-decoration: underline; /* 5 */
+  cursor: pointer; /* 5 */
+}
+a[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+footer :target {
+  background: yellow;
+}
+
+
+
+#footnotes {
+
+
+
+  a {
+    float: left;
+    font-weight: bold;
+  }
+
+  p {
+    padding-left: 30px;
+  }
+
+  a, p {
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+
+
+}
+
+
+
+.footnotes {
+  counter-reset: footnotes-list;
+
+  li {
+    counter-increment: footnotes-list;
+  }
+
+  a {
+
+    &:before {
+      content: counter(footnotes-list);
+    }
+  }
+
 }
