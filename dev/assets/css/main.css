@@ -1356,6 +1356,7 @@ a:hover {
 	left: 6px;
 	position: absolute;
 	background: #333;
+	padding: 10px 5px;
 	text-align: left;
 	transition: all 150ms ease;
 	-webkit-transform: translate3d(0, -5%, 0);
@@ -1418,6 +1419,10 @@ a:hover {
 	background-repeat: no-repeat;
 }
 
+.sm > a:hover {
+	opacity: 0.8;
+}
+
 .title {
 	display: none;
 }
@@ -1425,13 +1430,30 @@ a:hover {
 .toc-toggle {
 	position: absolute;
 	top: 7px;
+	display: block;
 	right: 15px;
+	width: 25px;
+	height: 25px;
 }
 
 .toc-toggle svg {
 	fill: #FFF;
 	width: 25px;
 	height: 25px;
+}
+
+.toc-toggle--close {
+	position: absolute;
+	top: 0;
+	display: none;
+}
+
+.toc-toggle:hover svg {
+	fill: yellow;
+}
+
+.toc-toggle:hover line {
+	stroke: yellow;
 }
 
 .sprite-icon {

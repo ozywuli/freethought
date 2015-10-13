@@ -68,7 +68,6 @@ gulp.task('css', function() {
 
 gulp.task('css-build', function() {
     return gulp.src('dev/assets/css/*')
-        .pipe( rename({suffix: '.min'}) )
         .pipe( minifycss() )
         .pipe( gulp.dest('dist/assets/css') )
 });
@@ -77,24 +76,14 @@ gulp.task('css-build', function() {
 
 // JS
 gulp.task('js', function() {
-  browserify({
-    entries: ['src/assets/js/main.js']
-  })
-    .bundle()
-    .pipe(source('main.js'))
+    return gulp.src('src/assets/js/*')
     .pipe(gulp.dest('dev/assets/js'));
 });
 
 
-
-
-
-
-
-
 gulp.task('js-build', function() {
     return gulp.src('dev/assets/js/*')
-    .pipe(streamify(uglify('main.min.js')))
+    .pipe(uglify('main.js'))
     .pipe(gulp.dest('dist/assets/js'));
 });
 
@@ -102,10 +91,17 @@ gulp.task('js-build', function() {
 
 
 
+// Images
 gulp.task('img', function() {
-  return gulp.src('src/assets/img/**/*')
+  return gulp.src('src/assets/img/*.{png,gif,jpg}')
     .pipe(gulp.dest('dev/assets/img'))
 });
+gulp.task('img-build', function() {
+  return gulp.src('dev/assets/img/**')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img'))
+});
+
 
 
 // Clean
@@ -133,28 +129,15 @@ gulp.task('watch', function() {
     gulp.watch('src/assets/img/**/*', ['img']);
 
 
+    gulp.watch('src/assets/js/*', ['js'])
 
-  var watcher  = watchify(browserify({
-    entries: ['src/assets/js/main.js'],
-    debug: true,
-    cache: {}, packageCache: {}, fullPaths: true
-  }));
 
-  return watcher.on('update', function () {
-    watcher.bundle()
-      .pipe(source('main.js'))
-      .pipe(gulp.dest('dev/assets/js'))
-      console.log('Updated');
-  })
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(gulp.dest('dev/assets/js'));
 
 });
 
 
 // Deploy... great success!
 gulp.task('build', function() {
-    gulp.start('html-build', 'css-build', 'js-build');
+    gulp.start('html-build', 'css-build', 'js-build', 'img-build');
 });
 

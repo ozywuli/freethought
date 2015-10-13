@@ -10,8 +10,12 @@ $tocToggle.on('click', function(e) {
 
   if ($('body').hasClass('toc--active')) {
     $('body').removeClass('toc--active');
+    $('.toc-toggle--close').fadeOut();
+    $('.toc-toggle--open').fadeIn();
   } else {
     $('body').addClass('toc--active');
+    $('.toc-toggle--close').fadeIn();
+    $('.toc-toggle--open').fadeOut();
   }
 
 });
@@ -26,8 +30,10 @@ $smToggle.on('click', function(e) {
 
   if ($('body').hasClass('sm-active')) {
     $('body').removeClass('sm-active')
+
   } else {
     $('body').addClass('sm-active');
+
   }
 
 });
@@ -46,6 +52,8 @@ $('body').on('click', function(e) {
     !$sm.find('*').is(e.target)
     ) {
     $(this).attr('class', '');
+    $('.toc-toggle--close').fadeOut();
+    $('.toc-toggle--open').fadeIn();
   }
 
 });
