@@ -1538,9 +1538,7 @@ a:hover {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	height: 100vh;
 	background: url("../img/step_into_your_place.jpg") center center;
-	background-attachment: fixed;
 	background-size: cover;
 }
 
@@ -1602,6 +1600,11 @@ a:hover {
 
 .browserupgrade-overlay a {
 	text-decoration: underline;
+}
+
+.content {
+	height: 100%;
+	min-height: 100%;
 }
 
 .sections {
@@ -1811,7 +1814,23 @@ footer :target {
 	content: counter(footnotes-list);
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 600px) {
+
+.section {
+	float: left;
+	display: block;
+	margin-right: 2.35765%;
+	width: 65.88078%;
+	margin-left: 17.05961%;
+}
+
+.section:last-child {
+	margin-right: 0;
+}
+
+}
+
+@media all and (min-width: 1025px) {
 
 .topbar {
 	height: auto;
@@ -1830,6 +1849,12 @@ footer :target {
 
 .toc-toggle {
 	top: 12px;
+}
+
+.masthead {
+	height: 100%;
+	height: 100vh;
+	background-attachment: fixed;
 }
 
 .masthead__img {

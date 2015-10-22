@@ -3,10 +3,13 @@
   position: relative;
   width: 100%;
   height: 100%;
-  height: 100vh;
   background: url('../img/step_into_your_place.jpg') center center;
-  background-attachment: fixed;
   background-size: cover;
+  @include respond-to('desktop') {
+      height: 100%;
+      height: 100vh;
+      background-attachment: fixed;
+  }
 }
   .masthead__copy {
     display: table-cell;
